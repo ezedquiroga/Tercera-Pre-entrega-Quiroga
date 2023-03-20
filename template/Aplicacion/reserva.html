@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido_cambia %}
+    <h4>Por favor, complete los datos solicitados para realizar una reserva</h4>
+    {% if reservas %}
+        {% for reserva in reservas %}
+            <p>reserva: {{ reserva.nombre }}</p>
+        {% endfor %}
+    {% else %}
+        <h1>No se hicieron reservas</h1>
+    {% endif %}
+{% endblock %}
