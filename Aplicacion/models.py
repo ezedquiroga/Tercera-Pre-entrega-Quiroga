@@ -7,10 +7,13 @@ class Reserva(models.Model):
     fecha = models.CharField(max_length=40)
 
 
-class Huspedes(models.Model):
+class Huespedes(models.Model):
     nombre = models.CharField(max_length= 40)
     Email = models.CharField(max_length=40)
     telefono = models.IntegerField()
+
+    def __str__(self):
+        return f"Huesped: {self.nombre}"
 
 
 class Cancelacion(models.Model):

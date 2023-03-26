@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
 {% block contenido_cambia %}
-    <h4>Por favor, ingrese el nombre del titular de la reserva</h4>
+<h4>Por favor, ingrese el nombre del titular de la reserva</h4>
+    <form> action="{% url 'AplicacionCancelacion' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar">
+    </form>
 {% endblock %}

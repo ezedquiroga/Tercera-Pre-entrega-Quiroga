@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
 {% block contenido_cambia %}
-    <h4>Por favor, complete los datos solicitados para realizar una reserva</h4>
+<h4>Por favor, complete los datos solicitados antes de realizar una reserva</h4>
+    <form> action="{% url 'AplicacionHuespedes' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Registrar">
+    </form>
+    <br><hr>
+    <form> action="{% url 'AplicacionBuscarHuesped' %}">
+        {{ form_busqueda.as_p }}
+        <input type="submit" value="Buscar">
+    </form>
+    <hr><br>
 {% endblock %}

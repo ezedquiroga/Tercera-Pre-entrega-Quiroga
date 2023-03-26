@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block contenido_cambia %}
+    {% if huespedes %}
+        {% for huesped in huespedes%}
+            <p>huesped: {{ huesped }}</p>
+
+        {% endfor %}
+    {% else %}
+        <h3>No se encontro huesped</h3>
+
+    {% endif %}
+{% endblock %}
